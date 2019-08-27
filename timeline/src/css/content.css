@@ -1,0 +1,16 @@
+.item {
+   width: 95%;
+   margin: 0 1em;
+}
+
+.foto-avatar img {
+   max-width: 7.8359%;
+   border-radius: 50%;
+   float: left;
+   margin-right: 0.8em;
+}
+
+.total-comentarios {
+   float: right;
+   margin-top: -4em;
+}

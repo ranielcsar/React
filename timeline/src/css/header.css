@@ -1,0 +1,11 @@
+.header {
+   background-color: #24252A;
+   padding: 2%;
+   margin-bottom: 1em;
+}
+
+.buscar-input {
+   float: right;
+   padding: 0.5%;
+   margin-top: -0.2em;
+}
