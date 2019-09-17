@@ -6,7 +6,7 @@
 /* ------------- COMPONENTES ------------- */
 
 const GlobalStyle = styled.createGlobalStyle`
-	* {
+   * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -20,7 +20,7 @@ const GlobalStyle = styled.createGlobalStyle`
 `
 
 const Container = styled.div`
-	width: 75%;
+   width: 75%;
    margin: 2em auto;
    border-radius: 10px;
    background-color: white;
@@ -31,15 +31,15 @@ const Contatos = styled.div`
 `
 
 const Titulo = styled.h3`
-	float: left;
+   float: left;
    font-size: 1.25em;
-  	padding: 8px;
+   padding: 8px;
    margin: 0.7em -2px;
    padding: 10px;
 `
 
 const Pesquisar = styled.input`
-	background-color: #ddd;
+   background-color: #ddd;
    outline: none;
    border: none;
    padding: 12px;
@@ -51,21 +51,21 @@ const Pesquisar = styled.input`
 `
 
 const ListaDeContatos = styled.ul`
-	li {
-   	text-align: left;
-  		padding: 0.75em;
-      list-style: none;
+   li {
+     text-align: left;
+     padding: 0.75em;
+     list-style: none;
    }
 `
 
 const Descricao = styled.span`
-	float: right;
+   float: right;
    font-size: 0.9em;
    opacity: 0.7;
 `
 
 const Botao = styled.button`
-	background-color: ${ props => props.primario ? "#33c" : "transparent" };
+   background-color: ${ props => props.primario ? "#33c" : "transparent" };
    color: ${ props => props.primario ? "#fafafa" : "gray" };
    
    outline: none;
@@ -77,7 +77,7 @@ const Botao = styled.button`
 `
 
 const Botoes = styled.div`
-	display: flex;
+   display: flex;
    justify-content: flex-end;
    background-color: #ddd;
    padding: 12px;
@@ -141,7 +141,7 @@ const App = () => (
 );
 
 ReactDOM.render(
-	<App/>,
+   <App/>,
    
    document.querySelector('#app')
 );
