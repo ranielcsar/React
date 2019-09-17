@@ -21,7 +21,7 @@ const Bloco = ({ valor, onClick }) => (
 const Tabela = ({ blocos, onClick }) => {      
 
    const criarBloco = (i) => (
-	    <Bloco valor={ blocos[i] } onClick={ () => onClick(i) } />
+	<Bloco valor={ blocos[i] } onClick={ () => onClick(i) } />
    );
    
    return (
@@ -48,8 +48,8 @@ const Tabela = ({ blocos, onClick }) => {
 }
 
 const verificarVencedor = (blocos) => {
-	var linhas = [
-   	    [0, 1, 2],
+    var linhas = [
+   	[0, 1, 2],
     	[3, 4, 5],
     	[6, 7, 8],
     	[0, 3, 6],
@@ -82,8 +82,8 @@ const Jogo = () => {
    });
    
    const manusearClick = (i) => {   
-   	  var hist = historico.slice(0, jogo.turnoAtual + 1),
-      	  atual = hist[hist.length - 1];
+      var hist = historico.slice(0, jogo.turnoAtual + 1),
+          atual = hist[hist.length - 1];
           
       var novosBlocos = atual.blocos.slice();
       
@@ -103,7 +103,7 @@ const Jogo = () => {
    }
    
    const pularPara = (jogada) => {
-   	  setStatusJogo({
+   	 setStatusJogo({
       	 turnoAtual: jogada,
          proximoJogador: (jogada % 2 === 0)
       });
