@@ -1,0 +1,51 @@
+html {
+  font: 16px "Helvetica", sans-serif;
+}
+
+.linha-tabela:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.bloco {
+  background: #fff;
+  border: 3px solid #333;
+  float: left;
+  font-size: 2em;
+  font-weight: bold;
+  width: 2.3em; height: 2.3em;
+  text-align: center;
+  margin: -1px;
+}
+
+.bloco:focus {
+  outline: none;
+}
+
+.jogo {
+  display: flex;
+  flex-direction: row;
+  margin: 2em;   
+  font-size: 1.25em;
+}
+
+.jogo-info {
+   margin: 2.5em;
+   width: 15%;
+}
+
+.botao {
+   display: flex;
+   flex-direction: column;
+   padding: 10px;
+   outline: none;
+   border: none;
+   margin: 0.3em;
+   border-radius: 5px;
+}
+
+.status, .win {
+   margin: 1em 0;
+   font-size: 1.4375em;
+}

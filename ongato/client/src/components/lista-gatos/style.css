@@ -1,0 +1,19 @@
+.lista-gatos {  
+   width: 100%;
+
+   display: flex;
+}
+
+.lista-gatos > li {
+   margin: 1rem;
+   width: calc(95% / 3);
+
+   padding: 15px;
+
+   border: .5px solid gray;
+}
+
+.gato {
+   display: flex;
+      flex-direction: column;
+}
