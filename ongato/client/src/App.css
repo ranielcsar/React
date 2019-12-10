@@ -4,6 +4,8 @@
    box-sizing: border-box;
 }
 
+html { font: 16px sans-serif, arial; }
+
 ul {
   list-style: none;
 }

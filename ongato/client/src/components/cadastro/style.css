@@ -1,0 +1,56 @@
+.formCadastro {   
+   width: 80%;
+   margin: auto;
+   
+   max-width: 25.25rem;
+   
+   border: 1px solid gray;
+   border-radius: 2px;
+   padding: 20px;
+}
+
+div {
+   display: flex;
+   flex-direction: column;
+}
+   
+label {
+   font-size: 1.10rem;
+   margin-bottom: .3rem;
+   color: #666;
+}
+
+input {
+   padding: 10px;
+   margin-bottom: 1.2rem;
+   border: 1px solid lightgray;
+   outline: none;      
+   border-radius: 6px;
+   transition: .2s;
+   font-size: 1.2rem;
+}
+
+input:focus {
+   border: 1px solid #4BAEA0;
+   box-shadow: 0 0 2px 3px #B6E6BD;
+   background-color: #EDEDED50;
+}
+
+button {
+   background-color: #27AA80;
+   outline: none;
+   border: none;
+   padding: 15px;
+   font-size: 1rem;
+   font-weight: bold;
+   color: #EDEEEE;
+   width: 100%;
+   transition: all .2s;
+   
+   border-radius: 30px;
+}
+
+button:hover {
+   transform: scale(1.030);
+   box-shadow: 0 0 2px 6px #27AA8040;
+}

@@ -1,8 +1,12 @@
 const express = require('express');
 const mysql = require('mysql');
+const bodyParser = require('body-parser');
 
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 4000;
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 const router = express.Router();
 
@@ -18,12 +22,28 @@ router.get('/gatos/:id?', (req, res) => {
    executarQuerySQL("SELECT * FROM gatos" + filter, res);
 });
 
-/*router.delete('/', (req, res) => {
-   
+router.post('/gatos/novo', (req, res) => {
+   var 
+   raca          = req.body.raca.substring(0, 250),
+   sexo          = req.body.sexo.substring(0, 250),
+   idade         = req.body.idade.substring(0, 250),
+   adotado       = req.body.adotado.substring(0, 250),
+   castrado      = req.body.castrado.substring(0, 250),
+   vermifugado   = req.body.vermifugado.substring(0, 250),
+   personalidade = req.body.personalidade.substring(0, 250);
+
+   executarQuerySQL(
+      `INSERT INTO gatos(raca, sexo, idade, adotado, castrado, vermifugado, personalidade)
+      VALUES('${ raca }', '${ sexo }', '${ idade }', '${ adotado }', '${ castrado }',
+      '${ vermifugado }', '${ personalidade }')`, res
+   );
 });
 
-router.post('/', (req, res) => {
-
+/*
+router.delete('/delete/:id', (req, res) => {
+   executarQuerySQL(
+      `DELETE FROM gatos WHERE ID=${ parseInt(req.params.id) }`, res
+   );
 });
 
 router.patch('/', (req, res) => {
@@ -49,7 +69,7 @@ const executarQuerySQL = (query, res) => {
       }
 
       conexao.end();
-      console.log('Executou!');
+      console.log(`Query executada: ${ query }`);
    });
 }
 

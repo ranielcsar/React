@@ -1,13 +1,14 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
 import './App.css';
 
 import ListaGatos from './components/lista-gatos';
 
 const App = () => (
-   <div>
+   <BrowserRouter>
       <ListaGatos/>
-   </div>  
+   </BrowserRouter>  
 )
 
 export default App;

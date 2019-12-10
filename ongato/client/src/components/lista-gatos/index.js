@@ -1,43 +1,73 @@
 import React from 'react';
+import { Route, Link, Switch } from 'react-router-dom';
 
 import './style.css';
 
+import Modal from '../modal';
+
+const Gato = ({ gato }) => {
+
+   return (
+      <li className="gato">
+         <span><b>Raça:</b> <span className="prop">{ gato.raca }</span></span>
+         <span><b>Sexo:</b> <span className="prop">{ gato.sexo }</span></span>
+         <span><b>Idade:</b> <span className="prop">{ gato.idade }</span></span>
+         <span><b>Adotado:</b> <span className="prop">{ gato.adotado }</span></span>
+         <span><b>Castrado:</b> <span className="prop">{ gato.castrado }</span></span>
+         <span><b>Vermifugado:</b> <span className="prop">{ gato.vermifugado }</span></span>
+         <span><b>Personalidade:</b> <span className="prop">{ gato.personalidade }</span></span>            
+      </li>
+   )
+}
+
 const ListaGatos = () => {
 
-  var [ gatos, setGatos ] = React.useState([]);
+   var [ gatos, setGatos ] = React.useState([]);
 
-  React.useEffect( () => {
-    callAPI()
-      .then( (res) => setGatos(res))
-      .catch( (error) => console.log(error))
-  }, []);
+   var [ state, setState ] = React.useState(false);   
 
-  var callAPI = async () => {
-    const response = await fetch('/gatos');
-    const body = await response.json(); 
+   React.useEffect( () => {
+     callAPI()
+       .then( (res) => setGatos(res))
+       .catch( (error) => console.log(error))
+   }, []);
 
-    if (response.status !== 200) { throw Error(body.message); }
+   var callAPI = async () => {
+      const response = await fetch('/gatos');
+      const body = await response.json(); 
 
-    return body;
-  }
+      if (response.status !== 200) { throw Error(body.message); }
 
-  return (
-      <ul className="lista-gatos">
-         {
-            gatos.map( (gato) => (
-               <li className="gato" key={ gato.ID }>
-                  <span className="nome"><b>Nome:</b> { gato.nome }</span>
-                  <span className="raca"><b>Raça:</b> { gato.raca }</span>
-                  <span className="idade"><b>Idade:</b> { gato.idade }</span>
-                  <span className="castrado"><b>Castrado:</b> { gato.castrado }</span>
-                  <span className="vermi"><b>Vermifugado:</b> { gato.vermifugado }</span>
-                  <span className="adotado"><b>Adotado:</b> { gato.adotado }</span>
-                  <span className="person"><b>Personalidade:</b> { gato.personalidade }</span>
-               </li>
-            ))
-         }
-      </ul>
-  );
+      return body;
+   }
+
+   const showModal = () => { setState(true)  }
+   const hideModal = () => { setState(false) }
+
+   return (
+      <div>
+         <ul className="lista-gatos">
+            {
+               gatos.map( (gato) => (
+                  <div key={ gato.ID }>
+                     <Link to={ `gatos/${ gato.ID }` } onClick={ showModal }>
+                        <h3>GATO { gato.ID }</h3>
+                     </Link>
+
+                     <Switch>
+                        <Modal show={ state } handleClose={ hideModal }>
+                           <Route
+                              path="/"
+                              render={ () => <Gato gato={ gato }/> }
+                           />
+                        </Modal>
+                     </Switch>
+                  </div>
+               ))               
+            }
+         </ul>         
+      </div>
+   );
 }
 
 export default ListaGatos;

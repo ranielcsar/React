@@ -1,19 +1,35 @@
 .lista-gatos {  
-   width: 100%;
+   width: 100%;   
+   margin-top: 1rem;
 
    display: flex;
+      flex-wrap: wrap;
 }
 
-.lista-gatos > li {
-   margin: 1rem;
-   width: calc(95% / 3);
+.lista-gatos > div {
+   flex-basis: calc(95% / 3);
 
+   margin: .3rem;
    padding: 15px;
 
    border: .5px solid gray;
 }
 
+.lista-gatos > div a {   
+   text-decoration: none;
+}
+
+.prop {
+   float: right;
+   border: none!important;
+}
+
 .gato {
    display: flex;
       flex-direction: column;
+}
+
+.gato > span {
+   margin-bottom: .5rem;
+   border-bottom: .3px solid #EEE;
 }
