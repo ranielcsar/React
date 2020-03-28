@@ -8,3 +8,9 @@
 
 - #### 3º dia (25/03/2020):
   - [x] Front pronto! Quem quiser agora pode bater de front... (risos)
+  
+- #### 4º dia (26/03/2020):
+  - [x] Mobile pronto!
+  
+- #### 5º dia (27/03/2020):
+  - [ ] Funções avançadas. 
