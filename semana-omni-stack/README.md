@@ -13,4 +13,4 @@
   - [x] Mobile pronto!
   
 - #### 5º dia (27/03/2020):
-  - [ ] Funções avançadas. 
+  - [x] Funções avançadas. 
