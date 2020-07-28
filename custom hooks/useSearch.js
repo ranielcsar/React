@@ -4,7 +4,7 @@ const useSearch = (array) => {
    const [ searchTerm, setSearchTerm ] = useState("");
    const [ result, setResult ] = useState([]);
 
-   const handleChange = event => {
+   const handleChange = (event) => {
       setSearchTerm(event.target.value);
    }
 
